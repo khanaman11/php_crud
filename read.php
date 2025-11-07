@@ -27,6 +27,7 @@ $resultSet = mysqli_query($conn, $query);
                         <th>Email</th>
                         <th>Password</th>
                         <th>Mobile</th>
+                        <th>profile</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -38,6 +39,7 @@ $resultSet = mysqli_query($conn, $query);
                             <td><?php echo $userdetails["email"] ?></td>
                             <td><?php echo $userdetails["password"] ?></td>
                             <td><?php echo $userdetails["mobile"] ?></td>
+                            <td><img src="files/<?php echo $userdetails["files"] ?>" alt="profile" style="width:60px; height:60px; object-fit:cover; border-radius:50%;"></td>
                             <td>
                                 <a href="delete.php?id=<?php echo $userdetails['id']; ?>"
                                     onclick="return confirm('Are you sure you want to delete this record?');">
