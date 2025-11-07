@@ -12,7 +12,7 @@ if (isset($_POST['btn'])) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $mobile = trim($_POST['mobile']);
-
+    
     $fileExtaintion = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
     $allowedExtension = ["png", "jpg", "jpeg", "webp", "avif"];
     $fileValidation =  in_array($fileExtaintion, $allowedExtension);
@@ -78,7 +78,7 @@ if (isset($_POST['btn'])) {
                     icon: 'error',
                     confirmButtonText: 'OK'
                 });
-        </script>";
+           </script>";
     }
 }
 ?>

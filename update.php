@@ -14,6 +14,7 @@ foreach ($result as $key => $data) {
     $userEmail =  $data['email'];
     $userPassword =  $data['password'];
     $userMobile =  $data['mobile'];
+    $userprofile =  $data['files'];
 }
 ?>
 
@@ -23,13 +24,15 @@ if (isset($_POST['btn'])) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
     $mobile = trim($_POST['mobile']);
+    $files = trim($_POST['file']);
 
 
     $query = "UPDATE users 
               SET name = '$name', 
                   email = '$email', 
                   password = '$password', 
-                  mobile = '$mobile' 
+                  mobile = '$mobile' ,
+                  files = '$files'
                WHERE id = $selectedId";
 
     $result = mysqli_query($conn, $query);
@@ -78,6 +81,10 @@ if (isset($_POST['btn'])) {
             <div class="form-group mb-3">
                 <label for="Uphone" class="form-lable">Mobile</label>
                 <input type="tel" class="form-control" name="mobile" id="Uphone" value="<?php echo $userMobile ?>">
+            </div>
+            <div class="form-group mb-3">
+                <label for="fileUpload" class="form-label fw-bold">Choose any file</label>
+                <input type="file" class="form-control" id="fileUpload" name="file">
             </div>
             <div class="form-group mb-3 mt-5">
                 <input type="submit" class="form-control bg-primary text-white fw-bold" value="Update User" name="btn">
