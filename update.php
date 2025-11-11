@@ -92,7 +92,4 @@ if (isset($_POST['btn'])) {
         </form>
     </div>
 </div>
-
-
-
 <?php include_once("footer.php") ?>

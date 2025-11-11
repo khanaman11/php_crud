@@ -14,7 +14,7 @@ if (isset($_POST['btn'])) {
     $mobile = trim($_POST['mobile']);
     
     $fileExtaintion = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-    $allowedExtension = ["png", "jpg", "jpeg", "webp", "avif"];
+    $allowedExtension = ["png", "jpg", "jpeg", "webp", "avif" , "pdf"];
     $fileValidation =  in_array($fileExtaintion, $allowedExtension);
 
     if ($fileValidation) {
